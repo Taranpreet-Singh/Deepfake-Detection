@@ -1,0 +1,292 @@
+<html>
+<head>
+  <style>
+
+
+         @import "compass/css3";
+
+@import url("https://fonts.googleapis.com/css?family=Lato");
+
+$background: #e74c3c;
+$file-upload-color: #c0392b;
+$file-upload-size: 300px;
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Lato, Arial;
+    @include box-sizing(border-box);
+}
+
+.login-box{
+  width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: white;
+}
+.login-box h1{
+
+  font-size: 40px;
+  border-bottom: 6px solid #00fecb;
+  margin-bottom: 50px;
+  padding: 13px 0;
+}
+p {
+  margin-top: 200px;
+  a {
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    padding: 5px 10px;
+    margin: 0 5px;
+    background-color: darken($file-upload-color, 2);
+    @include transition(all 0.2s ease-in);
+    &:hover {
+      background-color: darken($file-upload-color, 5);
+    }
+  }
+}
+.custom-file-upload-hidden {
+    display: none;
+    visibility: hidden;
+    position: absolute;
+    left: -9999px;
+}
+.custom-file-upload {
+    display: block;
+    width: auto;
+    font-size: 16px;
+    margin-top: 30px;
+    //border: 1px solid #ccc;
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+}
+
+.file-upload-wrapper {
+    position: relative;
+    margin-bottom: 5px;
+    //border: 1px solid #ccc;
+}
+.file-upload-input {
+    width: $file-upload-size;
+    color: #fff;
+    font-size: 16px;
+    padding: 11px 17px;
+    border: none;
+    background-color: $file-upload-color;
+    @include transition(all 0.2s ease-in);
+    float: left; /* IE 9 Fix */
+    &:hover, &:focus {
+        background-color: darken($file-upload-color, 5);
+        outline: none;
+    }
+}
+.file-upload-button {
+    cursor: pointer;
+    display: inline-block;
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 11px 20px;
+    border: none;
+    margin-left: -1px;
+    background-color: darken($file-upload-color, 10);
+    float: left; /* IE 9 Fix */
+    @include transition(all 0.2s ease-in);
+    &:hover {
+        background-color: darken($file-upload-color, 20);
+    }
+}
+body{
+ background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url(/static/stylesheets/faq_bg.jpg);
+	height: 100vh;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+	position: relative;
+}
+    h1
+    {
+    font-size: 40px;
+    border-bottom: 6px solid #00fecb;
+    margin-bottom: 50px;
+    padding: 13px 0;
+    }
+    .sub-main{
+  width: 30%;
+  margin:22px;
+  float: left;
+}
+ .button-three{
+  text-align: center;
+  cursor: pointer;
+  font-size:24px;
+  margin: 20px 0 0 30px;
+}
+.button-three {
+    position: relative;
+    background-color: #00fecb;
+    border: none;
+    padding: 20px;
+    width: 200px;
+    border-radius:20px;
+
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.button-three:hover{
+   background:#fff;
+   box-shadow:0px 2px 10px 5px #97B1BF;
+   color:#000;
+}
+
+.button-three:after {
+    content: "";
+    background: #f1c40f;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.button-three:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
+$default-font: 'Open Sans', sans-serif
+
+$accent: #ffb74d
+$link: #4a90e2
+$link_hover: darken($link, 10%)
+$accent_hover: darken($accent, 10%)
+
+$text_color: #2f3640
+$gray: #edeff0
+$dark_gray: #b5bac1
+
+@function rem($px)
+{
+	@return $px / 16px + 0rem
+	@return $px}
+
+@mixin inline-block($va: top)
+{
+	display: inline-block
+	vertical-align: $va}
+
+html
+{
+	font-size: 16px
+	background: $gray
+	font-family: $default-font}
+
+h2{
+	font-size: 20px
+	margin-bottom: 20px
+	color: #fff
+}
+#form-group
+{
+	width: 500px
+	margin: auto
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%,-50%)
+	border-radius: 4px
+	background-color: #2e4261
+	box-shadow: 0 1px 2px 0 #c9ced1
+	padding: rem(20px)
+	margin-bottom: rem(20px)}
+
+.file-upload
+{
+	width: auto
+	height: rem(53px)
+	cursor: pointer
+	cursor: pointer
+	&-input
+		height: rem(53px)
+	&-label
+		display: block
+		background: none
+		border: none
+		color: #fff
+		line-height: rem(53px)
+		height: rem(53px)
+
+		// width: 160px
+		padding: 0 120px 0 0
+		margin-bottom: 0
+
+		white-space: nowrap
+		text-overflow: ellipsis
+		overflow: hidden
+		&::after
+			height: rem(53px)
+			line-height: rem(53px)
+			padding: 0 rem(30px)
+			color: #fff
+			content: 'Choose file'
+			border-radius: 3px
+			background-color: #536480
+			box-shadow: 0 2px 2px #000000
+			border-left: 0}
+			input
+			{
+			margin-left:60px;
+			}
+
+
+  </style>
+</head>
+<body>
+<div class="login-box">
+  <div class="row">
+    <div class="col">
+
+      <h1>Upload the <span>Video</span></h1>
+      <hr>
+
+      <form action="/upload-vid" method="POST" enctype="multipart/form-data">
+
+        <div class="form-group">
+
+          <div class="custom-file-upload">
+
+            <label for="file-upload">
+
+              <input type="file" class="custom-file-input" name="vid" id="file-upload"  ></label>
+
+          </div>
+        </div>
+        <div class="sub-main">
+      <button type="submit" class="button-three">Upload</button>
+    </div>
+
+
+
+
+      </form>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>

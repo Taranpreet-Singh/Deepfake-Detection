@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>faq</title>
+<link rel="stylesheet" href="/static/faq.css">
+    <style>
+
+        		.faq_container
+		{
+		background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url(/static/stylesheets/faq_bg.jpg);
+	height: 100vh;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+	position: relative;
+	margin:0px;
+	padding: 20px;
+		}
+		span{
+		color:#fff;
+		font-weight: bold;
+			font-size:50px;
+			padding: 30px 20px 20px 30px;
+
+			}
+
+
+        .faq_question {
+            margin: 0px;
+            padding: 30px 20px 20px 30px;
+            display: inline-block;
+            cursor: pointer;
+            font-weight: bold;
+			font-size:25px;
+			color:#00fecb;
+        }
+
+        .faq_answer_container {
+            display:block;
+			padding: 20px 20px 20px 30px;
+			font-size:20px;
+			color:#fff;
+        }
+    </style>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('.faq_question').click(function() {
+
+                if ($(this).parent().is('.open')) {
+                    $(this).closest('.faq').find('.faq_answer_container').slideUp();
+                    $(this).closest('.faq').removeClass('open');
+                } else {
+                    $('.faq_answer_container').slideUp();
+                    $('.faq').removeClass('open');
+                    $(this).closest('.faq').find('.faq_answer_container').slideDown();
+                    $(this).closest('.faq').addClass('open');
+                }
+
+            });
+        });
+    </script>
+</head>
+
+<body>
+<form action="/faq">
+    <div class="faq_container">
+	<span>FAQs<br></span>
+        <div class="faq">
+		     
+            <div class="faq_question open">1. What is deep fake detection?</div>
+            <div class="faq_answer_container" style="display: block;">
+                <div class="faq_answer">Deepfakes (a portmanteau of "deep learning" and "fake") are synthetic media in which a person in an existing image or video is replaced with someone else's likeness.</div>
+            </div>
+        </div>
+
+        <div class="faq">
+            <div class="faq_question">2. Why Deepfake detection is important?</div>
+            <div class="faq_answer_container">
+                <div class="faq_answer"> Deepfake al- gorithms can create fake images and videos that humans cannot distinguish them from authentic ones. The proposal of technologies that can automatically detect and assess the integrity of digital visual media is therefore indispensable.</div>
+            </div>
+        </div>
+
+        <div class="faq">
+            <div class="faq_question">3. How does Deepfake detection work?</div>
+            <div class="faq_answer_container">
+                <div class="faq_answer">As a result, typical deepfake detectors focus on the face in videos: first tracking it and then passing on the cropped face data to a neural network that determines whether it is real or fake</div>
+            </div>
+        </div>
+    </div>
+</form>
+</body>
+
+</html>
